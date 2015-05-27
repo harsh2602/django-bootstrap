@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}
+Welcome | {{ block.super }}
+{% endblock %}
+
+<style>
+    {% block style %}
+
+    {% endblock %}
+</style>
+
+
+<!-- Main component for a primary marketing message or call to action -->
+
+{% block jumbotron %}
+    <div class="jumbotron">
+        <div class="row">
+            <div class='col-sm-8'>
+                <h1>Try Django 1.8</h1>
+                <p>This is landing page to get you started. Enter the contents in here to create your first Django powered Bootstrap project</p>
+                <p>
+                    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Join Us &raquo;</a>
+                </p>
+            </div>
+        <div class='col-sm-4' style="background-color:black;height:300px">
+    </div>
+</div>
+</div>
+<!--{{ block.super }}-->
+
+      <!--HI-->
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="row">
+  <div class="col-sm-3 pull-right">
+        <p class="lead text-align-center">{{ title }}</p>
+
+        <!--p>{{ user }} is user</p>
+
+        <p> user is {{ request.user }}</p-->
+
+        <form method="post" action="">{% csrf_token %}
+            {{ form|crispy }}
+
+            <input class="btn btn-primary" type="submit" value="Sign Up" />
+        </form>
+  </div>
+
+ <div class="col-sm-3">
+     <p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
+ </div>
+
+ <div class="col-sm-3">
+     <p class="lead text-align-center">Created for starters of all kind</p>
+ </div>
+
+ <div class="col-sm-3">
+     <p class="lead text-align-center">Created for starters of all kind</p>
+ </div>
+
+</div>
+
+{% endblock %}
